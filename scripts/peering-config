@@ -60,4 +60,17 @@ if [ ! -s "$mux2dev_db" ] ; then
     done
 fi
 
+if [ ! -s $prefix_db ] ; then
+    echo "error: $prefix_db not found."
+    echo "list the IPv4 prefixes you will announce in $prefix_db."
+    die "create an empty file if you will not announce IPv4 prefixes."
+fi
+
+if [ ! -e $prefix6_db ] ; then
+    echo "error: $prefix6_db not found."
+    echo "list the IPv6 prefixes you will announce in $prefix6_db."
+    die "create an empty file if you will not announce IPv6 prefixes."
+fi
+
+
 # vim: ft=sh
